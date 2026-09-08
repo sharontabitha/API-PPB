@@ -3,7 +3,10 @@ import { ProductModel } from "../models/productModel.js";
 export const ProductController = {
   async getAll(req, res) {
     try {
-      const products = await ProductModel.getAll();
+      const { name, category_id } = req.query;
+      
+      // Mengirimkan parameter filter ke model
+      const products = await ProductModel.getAll({ name, category_id });
       res.json(products);
     } catch (err) {
       res.status(500).json({ error: err.message });
@@ -46,4 +49,3 @@ export const ProductController = {
     }
   },
 };
-
