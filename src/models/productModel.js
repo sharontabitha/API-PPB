@@ -1,4 +1,4 @@
-import { supabase } from "../config/supabaseClient.js";
+import { supabase } from "../config/supabaseclient.js";
 
 export const ProductModel = {
   async getAll(filters = {}) {

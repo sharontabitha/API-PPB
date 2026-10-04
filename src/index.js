@@ -4,6 +4,7 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import customerRoutes from "./routes/customerRoutes.js";
 import reportRoutes from "./routes/reportRoutes.js";
+import loanRoutes from "./routes/loanRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/reports", reportRoutes);
+app.use("/loans", loanRoutes);
+app.use("/api/loans", loanRoutes);
 
 // Jalankan listener HANYA jika bukan di environment Vercel
 if (process.env.NODE_ENV !== "production") {
